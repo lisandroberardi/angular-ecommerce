@@ -1,0 +1,26 @@
+<h3>Registrarse</h3>
+<form [formGroup]="myForm" (ngSubmit)="registrarse()">
+    <div>
+        <label for="">Nombre</label>
+        <input type="text" formControlName="nombre" [ngClass]="{error:myForm.get('nombre')?.hasError('required') && myForm.get('nombre')?.dirty}">
+    </div>
+    <div *ngIf="myForm.get('nombre')?.errors && myForm.get('nombre')?.dirty">El nombre es obligatorio</div>
+    <div>
+        <label for="">Correo</label>
+        <input type="email" formControlName="correo" [ngClass]="{error:myForm.get('correo')?.hasError('required') && myForm.get('correo')?.dirty,warning:myForm.get('correo')?.hasError('email') && myForm.get('correo')?.dirty}">
+    </div>
+
+    <div *ngIf="myForm.get('correo')?.errors && myForm.get('correo')?.dirty">
+        <div *ngIf="myForm.get('correo')?.hasError('required')">El correo es obligatorio</div>
+        <div *ngIf="myForm.get('correo')?.hasError('email')">El correo es incorrecto</div>
+     </div>
+    <div>
+        <label for="">Clave</label>
+        <input type="password" formControlName="clave" [ngClass]="{error:myForm.get('clave')?.hasError('required') && myForm.get('clave')?.dirty,warning:myForm.get('clave')?.hasError('minlength') && myForm.get('clave')?.dirty}">
+    </div>
+    <div *ngIf="myForm.get('clave')?.errors && myForm.get('clave')?.dirty">
+       <div *ngIf="myForm.get('clave')?.hasError('required')">La clave es obligatoria</div>
+       <div *ngIf="myForm.get('clave')?.hasError('minlength')">La clave debe tener al menos 6 caracteres</div>
+    </div>
+    <input type="submit" value="Registrarse" [disabled]="myForm.invalid">
+</form>

@@ -1,0 +1,16 @@
+<h1>Productos</h1>
+
+
+
+
+<h1>Productos</h1>
+<div>
+    <div *ngFor="let producto of productos">
+        <p>{{producto.title}}</p>
+        <p>{{producto.price}}</p>
+        <img src="{{producto.thumbnail}}" alt="">
+        <button routerLink="/productos/{{producto.id}}">Ver Detalle</button>
+    </div>
+</div>
+
+
