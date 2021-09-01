@@ -1,5 +1,14 @@
+<h3>Detalle de producto</h3>
 <div>
-    <p>{{producto.title}}</p>
-    <p>{{producto.price}}</p>
-    <img src="{{producto.thumbnail}}" alt="">
+    <div><img src="{{producto.thumbnail}}" alt=""></div>
+    <div>Producto: {{producto.title}}</div>
+    <div>Precio: ${{producto.price}}</div>
+    <div>Unidades Disponibles: {{producto.available_quantity}}</div>
+    <div>Unidades Vendidas: {{producto.sold_quantity}}</div>
+    <div>Condición: {{producto.condition}}</div>
+    <div>Garantía: {{producto.warranty}}</div>
+    <div>Imágenes del Producto:</div>
+    <div *ngFor="let picture of producto.pictures">
+        <img src="{{picture.url}}" alt="">
+    </div>
 </div>

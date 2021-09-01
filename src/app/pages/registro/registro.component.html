@@ -9,7 +9,6 @@
         <label for="">Correo</label>
         <input type="email" formControlName="correo" [ngClass]="{error:myForm.get('correo')?.hasError('required') && myForm.get('correo')?.dirty,warning:myForm.get('correo')?.hasError('email') && myForm.get('correo')?.dirty}">
     </div>
-
     <div *ngIf="myForm.get('correo')?.errors && myForm.get('correo')?.dirty">
         <div *ngIf="myForm.get('correo')?.hasError('required')">El correo es obligatorio</div>
         <div *ngIf="myForm.get('correo')?.hasError('email')">El correo es incorrecto</div>
@@ -22,5 +21,6 @@
        <div *ngIf="myForm.get('clave')?.hasError('required')">La clave es obligatoria</div>
        <div *ngIf="myForm.get('clave')?.hasError('minlength')">La clave debe tener al menos 6 caracteres</div>
     </div>
+    <br>
     <input type="submit" value="Registrarse" [disabled]="myForm.invalid">
 </form>

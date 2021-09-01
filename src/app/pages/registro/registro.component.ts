@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -20,6 +19,7 @@ export class RegistroComponent implements OnInit {
     })
   }
   registrarse(){
+    alert("Se mandó el formulario, ver console.log para ver datos enviados")
     console.log(this.myForm.value)
   }
   ngOnInit(): void {

@@ -1,16 +1,10 @@
-<h1>Productos</h1>
-
-
-
-
-<h1>Productos</h1>
+<h3>Productos</h3>
 <div>
     <div *ngFor="let producto of productos">
-        <p>{{producto.title}}</p>
-        <p>{{producto.price}}</p>
-        <img src="{{producto.thumbnail}}" alt="">
+        <div>Producto: {{producto.title}}</div>
+        <div>Precio: ${{producto.price}}</div>
+        <div><img src="{{producto.thumbnail}}" alt=""></div>
         <button routerLink="/productos/{{producto.id}}">Ver Detalle</button>
+        <br><br><hr><br><br>
     </div>
 </div>
-
-

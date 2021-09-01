@@ -10,16 +10,13 @@ export class HomeComponent implements OnInit {
 
   productos:any=[]
   constructor(private productosService:ProductosService) { 
-    
     this.getProductos()
-    
   }
   async getProductos(){
     //Promise
     const response:any = await this.productosService.getAllPromise()
     console.log("Response",response)
     this.productos = response.results
-
   }
 
   ngOnInit(): void {
